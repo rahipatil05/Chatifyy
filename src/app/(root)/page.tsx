@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import EditorPanel from "./_components/EditorPanel";
 import Header from "./_components/Header";
 import OutputPanel from "./_components/OutputPanel";
@@ -11,6 +11,11 @@ import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 export default function Home() {
   const { showAI, editorWidth, aiWidth, setEditorWidth, setAIWidth } = useCodeEditorStore();
   const containerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleEditorResize = (deltaX: number) => {
     if (!containerRef.current) return;
@@ -43,7 +48,7 @@ export default function Home() {
         >
           {/* Editor Panel */}
           <div 
-            style={{ width: `${editorWidth}%` }}
+            style={{ width: `${mounted ? editorWidth : 45}%` }}
             className="h-full flex-shrink-0"
           >
              <EditorPanel />
@@ -60,7 +65,7 @@ export default function Home() {
             <>
               <Resizer onResize={handleAIResize} />
               <div 
-                style={{ width: `${aiWidth}%` }}
+                style={{ width: `${mounted ? aiWidth : 30}%` }}
                 className="h-full flex-shrink-0 animate-in fade-in slide-in-from-right-5 duration-500"
               >
                  <AIPanel />

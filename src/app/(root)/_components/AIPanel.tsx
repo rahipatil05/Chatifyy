@@ -183,7 +183,7 @@ const AIPanel = () => {
               </div>
               <h3 className="text-sm font-medium text-gray-300 mb-1">No Analysis Ready</h3>
               <p className="text-xs text-gray-500 max-w-[200px]">
-                Click "Analyze Code" to get AI-powered insights, security reviews, and optimizations.
+                Click &quot;Analyze Code&quot; to get AI-powered insights, security reviews, and optimizations.
               </p>
             </motion.div>
           ) : isAnalyzing ? (
