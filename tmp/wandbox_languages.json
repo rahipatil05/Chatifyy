@@ -1,0 +1,867 @@
+[
+  {
+    "name": "gcc-head-c",
+    "language": "C",
+    "version": "16.0.1 20260227 (experimental)"
+  },
+  {
+    "name": "gcc-13.2.0-c",
+    "language": "C",
+    "version": "13.2.0"
+  },
+  {
+    "name": "gcc-12.3.0-c",
+    "language": "C",
+    "version": "12.3.0"
+  },
+  {
+    "name": "gcc-11.4.0-c",
+    "language": "C",
+    "version": "11.4.0"
+  },
+  {
+    "name": "gcc-10.5.0-c",
+    "language": "C",
+    "version": "10.5.0"
+  },
+  {
+    "name": "gcc-9.3.0-c",
+    "language": "C",
+    "version": "9.3.0"
+  },
+  {
+    "name": "gcc-8.4.0-c",
+    "language": "C",
+    "version": "8.4.0"
+  },
+  {
+    "name": "gcc-7.5.0-c",
+    "language": "C",
+    "version": "7.5.0"
+  },
+  {
+    "name": "gcc-6.5.0-c",
+    "language": "C",
+    "version": "6.5.0"
+  },
+  {
+    "name": "gcc-head-pp",
+    "language": "CPP",
+    "version": "16.0.1 20260227 (experimental)"
+  },
+  {
+    "name": "gcc-head",
+    "language": "C++",
+    "version": "16.0.1 20260227 (experimental)"
+  },
+  {
+    "name": "gcc-13.2.0",
+    "language": "C++",
+    "version": "13.2.0"
+  },
+  {
+    "name": "gcc-12.3.0",
+    "language": "C++",
+    "version": "12.3.0"
+  },
+  {
+    "name": "gcc-11.4.0",
+    "language": "C++",
+    "version": "11.4.0"
+  },
+  {
+    "name": "gcc-10.5.0",
+    "language": "C++",
+    "version": "10.5.0"
+  },
+  {
+    "name": "gcc-9.3.0",
+    "language": "C++",
+    "version": "9.3.0"
+  },
+  {
+    "name": "gcc-8.4.0",
+    "language": "C++",
+    "version": "8.4.0"
+  },
+  {
+    "name": "gcc-7.5.0",
+    "language": "C++",
+    "version": "7.5.0"
+  },
+  {
+    "name": "gcc-6.5.0",
+    "language": "C++",
+    "version": "6.5.0"
+  },
+  {
+    "name": "clang-head-c",
+    "language": "C",
+    "version": "23.0.0git (https://github.com/llvm/llvm-project.git 0b423a5b2738a795d8033398ca0959d36cee0e06)"
+  },
+  {
+    "name": "clang-17.0.1-c",
+    "language": "C",
+    "version": "17.0.1"
+  },
+  {
+    "name": "clang-16.0.4-c",
+    "language": "C",
+    "version": "16.0.4"
+  },
+  {
+    "name": "clang-15.0.7-c",
+    "language": "C",
+    "version": "15.0.7"
+  },
+  {
+    "name": "clang-14.0.6-c",
+    "language": "C",
+    "version": "14.0.6"
+  },
+  {
+    "name": "clang-head-pp",
+    "language": "CPP",
+    "version": "23.0.0git (https://github.com/llvm/llvm-project.git 0b423a5b2738a795d8033398ca0959d36cee0e06)"
+  },
+  {
+    "name": "clang-head",
+    "language": "C++",
+    "version": "23.0.0git (https://github.com/llvm/llvm-project.git 0b423a5b2738a795d8033398ca0959d36cee0e06)"
+  },
+  {
+    "name": "clang-17.0.1",
+    "language": "C++",
+    "version": "17.0.1"
+  },
+  {
+    "name": "clang-16.0.4",
+    "language": "C++",
+    "version": "16.0.4"
+  },
+  {
+    "name": "clang-15.0.7",
+    "language": "C++",
+    "version": "15.0.7"
+  },
+  {
+    "name": "clang-14.0.6",
+    "language": "C++",
+    "version": "14.0.6"
+  },
+  {
+    "name": "mono-6.12.0.199",
+    "language": "C#",
+    "version": "6.12.0.199"
+  },
+  {
+    "name": "mono-5.20.1.34",
+    "language": "C#",
+    "version": "5.20.1.34"
+  },
+  {
+    "name": "erlang-27.1",
+    "language": "Erlang",
+    "version": "27.1"
+  },
+  {
+    "name": "erlang-26.2.5.3",
+    "language": "Erlang",
+    "version": "26.2.5.3"
+  },
+  {
+    "name": "erlang-25.3.2.13",
+    "language": "Erlang",
+    "version": "25.3.2.13"
+  },
+  {
+    "name": "elixir-1.17.3",
+    "language": "Elixir",
+    "version": "1.17.3"
+  },
+  {
+    "name": "elixir-1.16.3",
+    "language": "Elixir",
+    "version": "1.16.3"
+  },
+  {
+    "name": "ghc-9.10.1",
+    "language": "Haskell",
+    "version": "9.10.1"
+  },
+  {
+    "name": "ghc-9.0.1",
+    "language": "Haskell",
+    "version": "9.0.1"
+  },
+  {
+    "name": "ghc-8.10.4",
+    "language": "Haskell",
+    "version": "8.10.4"
+  },
+  {
+    "name": "dmd-2.109.1",
+    "language": "D",
+    "version": "2.109.1"
+  },
+  {
+    "name": "gdc-head",
+    "language": "D",
+    "version": ""
+  },
+  {
+    "name": "ldc-1.39.0",
+    "language": "D",
+    "version": "1.39.0 dmd-2.109.1"
+  },
+  {
+    "name": "openjdk-jdk-22+36",
+    "language": "Java",
+    "version": "jdk-22+36"
+  },
+  {
+    "name": "openjdk-jdk-21+35",
+    "language": "Java",
+    "version": "jdk-21+35"
+  },
+  {
+    "name": "rust-1.82.0",
+    "language": "Rust",
+    "version": "1.82.0"
+  },
+  {
+    "name": "rust-1.81.0",
+    "language": "Rust",
+    "version": "1.81.0"
+  },
+  {
+    "name": "rust-1.80.1",
+    "language": "Rust",
+    "version": "1.80.1"
+  },
+  {
+    "name": "rust-1.79.0",
+    "language": "Rust",
+    "version": "1.79.0"
+  },
+  {
+    "name": "rust-1.78.0",
+    "language": "Rust",
+    "version": "1.78.0"
+  },
+  {
+    "name": "rust-1.77.2",
+    "language": "Rust",
+    "version": "1.77.2"
+  },
+  {
+    "name": "rust-1.76.0",
+    "language": "Rust",
+    "version": "1.76.0"
+  },
+  {
+    "name": "rust-1.75.0",
+    "language": "Rust",
+    "version": "1.75.0"
+  },
+  {
+    "name": "rust-1.74.1",
+    "language": "Rust",
+    "version": "1.74.1"
+  },
+  {
+    "name": "rust-1.73.0",
+    "language": "Rust",
+    "version": "1.73.0"
+  },
+  {
+    "name": "rust-1.72.1",
+    "language": "Rust",
+    "version": "1.72.1"
+  },
+  {
+    "name": "rust-1.71.1",
+    "language": "Rust",
+    "version": "1.71.1"
+  },
+  {
+    "name": "rust-1.70.0",
+    "language": "Rust",
+    "version": "1.70.0"
+  },
+  {
+    "name": "rust-1.69.0",
+    "language": "Rust",
+    "version": "1.69.0"
+  },
+  {
+    "name": "rust-1.68.2",
+    "language": "Rust",
+    "version": "1.68.2"
+  },
+  {
+    "name": "rust-1.67.1",
+    "language": "Rust",
+    "version": "1.67.1"
+  },
+  {
+    "name": "rust-1.66.1",
+    "language": "Rust",
+    "version": "1.66.1"
+  },
+  {
+    "name": "rust-1.65.0",
+    "language": "Rust",
+    "version": "1.65.0"
+  },
+  {
+    "name": "rust-1.64.0",
+    "language": "Rust",
+    "version": "1.64.0"
+  },
+  {
+    "name": "cpython-head",
+    "language": "Python",
+    "version": ""
+  },
+  {
+    "name": "cpython-2.7-head",
+    "language": "Python",
+    "version": ""
+  },
+  {
+    "name": "cpython-3.14.0",
+    "language": "Python",
+    "version": "3.14.0"
+  },
+  {
+    "name": "cpython-3.13.8",
+    "language": "Python",
+    "version": "3.13.8"
+  },
+  {
+    "name": "cpython-3.12.7",
+    "language": "Python",
+    "version": "3.12.7"
+  },
+  {
+    "name": "cpython-3.11.10",
+    "language": "Python",
+    "version": "3.11.10"
+  },
+  {
+    "name": "cpython-3.10.15",
+    "language": "Python",
+    "version": "3.10.15"
+  },
+  {
+    "name": "cpython-3.9.20",
+    "language": "Python",
+    "version": "3.9.20"
+  },
+  {
+    "name": "cpython-3.8.20",
+    "language": "Python",
+    "version": "3.8.20"
+  },
+  {
+    "name": "cpython-3.7.17",
+    "language": "Python",
+    "version": "3.7.17"
+  },
+  {
+    "name": "cpython-2.7.18",
+    "language": "Python",
+    "version": "2.7.18"
+  },
+  {
+    "name": "ruby-3.4.1",
+    "language": "Ruby",
+    "version": "3.4.1"
+  },
+  {
+    "name": "ruby-3.3.6",
+    "language": "Ruby",
+    "version": "3.3.6"
+  },
+  {
+    "name": "ruby-3.2.6",
+    "language": "Ruby",
+    "version": "3.2.6"
+  },
+  {
+    "name": "ruby-3.1.6",
+    "language": "Ruby",
+    "version": "3.1.6"
+  },
+  {
+    "name": "ruby-3.0.7",
+    "language": "Ruby",
+    "version": "3.0.7"
+  },
+  {
+    "name": "mruby-3.0.0",
+    "language": "Ruby",
+    "version": "3.0.0"
+  },
+  {
+    "name": "mruby-2.1.2",
+    "language": "Ruby",
+    "version": "2.1.2"
+  },
+  {
+    "name": "scala-3.5.1",
+    "language": "Scala",
+    "version": "3.5.1"
+  },
+  {
+    "name": "scala-3.3.4",
+    "language": "Scala",
+    "version": "3.3.4"
+  },
+  {
+    "name": "scala-2.13.15",
+    "language": "Scala",
+    "version": "2.13.15"
+  },
+  {
+    "name": "groovy-4.0.23",
+    "language": "Groovy",
+    "version": "4.0.23"
+  },
+  {
+    "name": "nodejs-20.17.0",
+    "language": "JavaScript",
+    "version": "20.17.0"
+  },
+  {
+    "name": "nodejs-18.20.4",
+    "language": "JavaScript",
+    "version": "18.20.4"
+  },
+  {
+    "name": "swift-6.0.1",
+    "language": "Swift",
+    "version": "6.0.1"
+  },
+  {
+    "name": "swift-5.10.1",
+    "language": "Swift",
+    "version": "5.10.1"
+  },
+  {
+    "name": "perl-5.42.0",
+    "language": "Perl",
+    "version": "5.42.0"
+  },
+  {
+    "name": "perl-5.40.0",
+    "language": "Perl",
+    "version": "5.40.0"
+  },
+  {
+    "name": "perl-5.38.0",
+    "language": "Perl",
+    "version": "5.38.0"
+  },
+  {
+    "name": "perl-5.36.0",
+    "language": "Perl",
+    "version": "5.36.0"
+  },
+  {
+    "name": "perl-5.34.0",
+    "language": "Perl",
+    "version": "5.34.0"
+  },
+  {
+    "name": "perl-5.33.8",
+    "language": "Perl",
+    "version": "5.33.8"
+  },
+  {
+    "name": "perl-5.32.1",
+    "language": "Perl",
+    "version": "5.32.1"
+  },
+  {
+    "name": "perl-5.30.3",
+    "language": "Perl",
+    "version": "5.30.3"
+  },
+  {
+    "name": "php-8.3.12",
+    "language": "PHP",
+    "version": "8.3.12"
+  },
+  {
+    "name": "php-8.2.24",
+    "language": "PHP",
+    "version": "8.2.24"
+  },
+  {
+    "name": "php-8.1.30",
+    "language": "PHP",
+    "version": "8.1.30"
+  },
+  {
+    "name": "php-8.0.30",
+    "language": "PHP",
+    "version": "8.0.30"
+  },
+  {
+    "name": "php-7.4.33",
+    "language": "PHP",
+    "version": "7.4.33"
+  },
+  {
+    "name": "php-5.6.40",
+    "language": "PHP",
+    "version": "5.6.40"
+  },
+  {
+    "name": "lua-5.4.7",
+    "language": "Lua",
+    "version": "5.4.7"
+  },
+  {
+    "name": "lua-5.3.6",
+    "language": "Lua",
+    "version": "5.3.6"
+  },
+  {
+    "name": "lua-5.2.4",
+    "language": "Lua",
+    "version": "5.2.4"
+  },
+  {
+    "name": "luajit-2.0.5",
+    "language": "Lua",
+    "version": "2.0.5"
+  },
+  {
+    "name": "luajit-2.0.4",
+    "language": "Lua",
+    "version": "2.0.4"
+  },
+  {
+    "name": "luajit-2.0.3",
+    "language": "Lua",
+    "version": "2.0.3"
+  },
+  {
+    "name": "sqlite-3.46.1",
+    "language": "SQL",
+    "version": "3.46.1"
+  },
+  {
+    "name": "sqlite-3.35.5",
+    "language": "SQL",
+    "version": "3.35.5"
+  },
+  {
+    "name": "fpc-3.2.2",
+    "language": "Pascal",
+    "version": "3.2.2"
+  },
+  {
+    "name": "clisp-2.49",
+    "language": "Lisp",
+    "version": "2.49"
+  },
+  {
+    "name": "lazyk",
+    "language": "Lazy K",
+    "version": ""
+  },
+  {
+    "name": "vim-9.1.0758",
+    "language": "Vim script",
+    "version": "9.1.0758"
+  },
+  {
+    "name": "vim-8.2.5172",
+    "language": "Vim script",
+    "version": "8.2.5172"
+  },
+  {
+    "name": "pypy-3.10-v7.3.17",
+    "language": "Python",
+    "version": "7.3.17 cpython-3.10.14"
+  },
+  {
+    "name": "pypy-3.9-v7.3.16",
+    "language": "Python",
+    "version": "7.3.16 cpython-3.9.19"
+  },
+  {
+    "name": "pypy-3.8-v7.3.11",
+    "language": "Python",
+    "version": "7.3.11 cpython-3.8.16"
+  },
+  {
+    "name": "pypy-3.7-v7.3.9",
+    "language": "Python",
+    "version": "7.3.9 cpython-3.7.13"
+  },
+  {
+    "name": "pypy-2.7-v7.3.17",
+    "language": "Python",
+    "version": "7.3.17 cpython-2.7.18"
+  },
+  {
+    "name": "ocaml-5.2.0",
+    "language": "OCaml",
+    "version": "5.2.0"
+  },
+  {
+    "name": "ocaml-4.14.2",
+    "language": "OCaml",
+    "version": "4.14.2"
+  },
+  {
+    "name": "go-1.23.2",
+    "language": "Go",
+    "version": "1.23.2"
+  },
+  {
+    "name": "go-1.22.8",
+    "language": "Go",
+    "version": "1.22.8"
+  },
+  {
+    "name": "go-1.16.3",
+    "language": "Go",
+    "version": "1.16.3"
+  },
+  {
+    "name": "go-1.15.11",
+    "language": "Go",
+    "version": "1.15.11"
+  },
+  {
+    "name": "go-1.14.15",
+    "language": "Go",
+    "version": "1.14.15"
+  },
+  {
+    "name": "sbcl-2.4.9",
+    "language": "Lisp",
+    "version": "2.4.9"
+  },
+  {
+    "name": "bash",
+    "language": "Bash script",
+    "version": "5.2.21(1)-release"
+  },
+  {
+    "name": "pony-0.58.5",
+    "language": "Pony",
+    "version": "0.58.5"
+  },
+  {
+    "name": "crystal-1.13.3",
+    "language": "Crystal",
+    "version": "1.13.3"
+  },
+  {
+    "name": "nim-2.2.8",
+    "language": "Nim",
+    "version": "2.2.8"
+  },
+  {
+    "name": "nim-2.2.6",
+    "language": "Nim",
+    "version": "2.2.6"
+  },
+  {
+    "name": "nim-2.2.4",
+    "language": "Nim",
+    "version": "2.2.4"
+  },
+  {
+    "name": "nim-2.2.2",
+    "language": "Nim",
+    "version": "2.2.2"
+  },
+  {
+    "name": "nim-2.2.0",
+    "language": "Nim",
+    "version": "2.2.0"
+  },
+  {
+    "name": "nim-2.0.16",
+    "language": "Nim",
+    "version": "2.0.16"
+  },
+  {
+    "name": "nim-2.0.14",
+    "language": "Nim",
+    "version": "2.0.14"
+  },
+  {
+    "name": "nim-2.0.10",
+    "language": "Nim",
+    "version": "2.0.10"
+  },
+  {
+    "name": "nim-2.0.8",
+    "language": "Nim",
+    "version": "2.0.8"
+  },
+  {
+    "name": "nim-2.0.6",
+    "language": "Nim",
+    "version": "2.0.6"
+  },
+  {
+    "name": "nim-2.0.4",
+    "language": "Nim",
+    "version": "2.0.4"
+  },
+  {
+    "name": "nim-2.0.2",
+    "language": "Nim",
+    "version": "2.0.2"
+  },
+  {
+    "name": "nim-2.0.0",
+    "language": "Nim",
+    "version": "2.0.0"
+  },
+  {
+    "name": "nim-1.6.20",
+    "language": "Nim",
+    "version": "1.6.20"
+  },
+  {
+    "name": "nim-1.6.18",
+    "language": "Nim",
+    "version": "1.6.18"
+  },
+  {
+    "name": "nim-1.6.14",
+    "language": "Nim",
+    "version": "1.6.14"
+  },
+  {
+    "name": "nim-1.6.12",
+    "language": "Nim",
+    "version": "1.6.12"
+  },
+  {
+    "name": "nim-1.6.10",
+    "language": "Nim",
+    "version": "1.6.10"
+  },
+  {
+    "name": "nim-1.6.8",
+    "language": "Nim",
+    "version": "1.6.8"
+  },
+  {
+    "name": "nim-1.6.6",
+    "language": "Nim",
+    "version": "1.6.6"
+  },
+  {
+    "name": "nim-1.6.4",
+    "language": "Nim",
+    "version": "1.6.4"
+  },
+  {
+    "name": "nim-1.6.0",
+    "language": "Nim",
+    "version": "1.6.0"
+  },
+  {
+    "name": "nim-1.4.8",
+    "language": "Nim",
+    "version": "1.4.8"
+  },
+  {
+    "name": "nim-1.4.6",
+    "language": "Nim",
+    "version": "1.4.6"
+  },
+  {
+    "name": "nim-1.2.8",
+    "language": "Nim",
+    "version": "1.2.8"
+  },
+  {
+    "name": "nim-1.0.10",
+    "language": "Nim",
+    "version": "1.0.10"
+  },
+  {
+    "name": "openssl-3.3.2",
+    "language": "OpenSSL",
+    "version": "3.3.2"
+  },
+  {
+    "name": "openssl-1.1.1w",
+    "language": "OpenSSL",
+    "version": "1.1.1w"
+  },
+  {
+    "name": "openssl-1.0.2u",
+    "language": "OpenSSL",
+    "version": "1.0.2u"
+  },
+  {
+    "name": "openssl-0.9.8zh",
+    "language": "OpenSSL",
+    "version": "0.9.8zh"
+  },
+  {
+    "name": "dotnetcore-8.0.402",
+    "language": "C#",
+    "version": "8.0.402"
+  },
+  {
+    "name": "dotnetcore-6.0.425",
+    "language": "C#",
+    "version": "6.0.425"
+  },
+  {
+    "name": "r-4.4.1",
+    "language": "R",
+    "version": "4.4.1"
+  },
+  {
+    "name": "typescript-5.6.2",
+    "language": "TypeScript",
+    "version": "5.6.2"
+  },
+  {
+    "name": "julia-1.10.5",
+    "language": "Julia",
+    "version": "1.10.5"
+  },
+  {
+    "name": "julia-1.6.1",
+    "language": "Julia",
+    "version": "1.6.1"
+  },
+  {
+    "name": "julia-1.0.5",
+    "language": "Julia",
+    "version": "1.0.5"
+  },
+  {
+    "name": "zig-head",
+    "language": "Zig",
+    "version": "0.16.0-dev.2682+02142a54d"
+  },
+  {
+    "name": "zig-0.13.0",
+    "language": "Zig",
+    "version": "0.13.0"
+  },
+  {
+    "name": "zig-0.9.1",
+    "language": "Zig",
+    "version": "0.9.1"
+  }
+]

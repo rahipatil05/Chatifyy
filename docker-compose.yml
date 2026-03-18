@@ -1,0 +1,31 @@
+services:
+  piston:
+    image: ghcr.io/engineer-man/piston:latest
+    container_name: piston
+    restart: always
+    privileged: true
+    ports:
+      - "2000:2000"
+    volumes:
+      - piston_data:/piston/packages
+    networks:
+      - codify_network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - codify_network
+
+networks:
+  codify_network:
+    driver: bridge
+
+volumes:
+  piston_data:
+  mongodb_data:
