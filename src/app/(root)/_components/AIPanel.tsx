@@ -1,20 +1,76 @@
 "use client";
 
 import { useCodeEditorStore } from "@/store/useCodeEditorStore";
-import { 
-  BrainCircuit, 
-  ShieldAlert, 
-  Zap, 
-  Activity, 
-  Loader2, 
-  Sparkles,
-  ChevronRight
-} from "lucide-react";
+import { BrainCircuit, ShieldAlert, Zap, Activity, Loader2, Sparkles, Copy, Check, FileText } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ReactSyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import FlowVisualizer from "./FlowVisualizer";
+
+const AICodeBlock = ({ content, lang }: { content: string; lang: string }) => {
+  const { editor, setCode } = useCodeEditorStore();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(content);
+    
+    // Also apply to editor as requested
+    if (editor) {
+      editor.setValue(content);
+      setCode(content);
+    }
+    
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleDownload = () => {
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `optimized_code_${lang || 'txt'}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  return (
+    <div className="group relative rounded-lg overflow-hidden my-3 border border-white/[0.05] bg-[#050505]">
+      {/* Code Header */}
+      <div className="flex items-center justify-between px-3 py-2 bg-white/[0.02] border-b border-white/[0.05]">
+         <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider">{lang || 'text'}</span>
+         <div className="flex items-center gap-2">
+            <button
+              onClick={handleCopy}
+              className={`flex items-center gap-1.5 px-2 py-1 rounded transition-all ${copied ? 'text-green-400 bg-green-400/10' : 'text-gray-400 bg-white/[0.05] hover:bg-white/[0.1] hover:text-white'}`}
+              title={copied ? "Copied & Applied!" : "Copy & Apply to Editor"}
+            >
+              {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
+              <span className="text-[10px] font-medium">{copied ? "Applied!" : "Copy & Apply"}</span>
+            </button>
+            <button
+              onClick={handleDownload}
+              className="flex items-center gap-1.5 px-2 py-1 rounded bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 transition-colors text-[10px] font-medium"
+              title="Download for Notepad"
+            >
+              <FileText className="w-3 h-3" />
+              Notepad
+            </button>
+         </div>
+      </div>
+      <ReactSyntaxHighlighter
+        language={lang || 'text'}
+        style={atomOneDark}
+        customStyle={{ margin: 0, padding: '12px', fontSize: '11px', background: 'transparent' }}
+      >
+        {content}
+      </ReactSyntaxHighlighter>
+    </div>
+  );
+};
 
 const AIPanel = () => {
   const { aiInsights, isAnalyzing, analyzeCode, error } = useCodeEditorStore();
@@ -65,7 +121,7 @@ const AIPanel = () => {
         {tabs.map((tab) => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id as any)}
+            onClick={() => setActiveTab(tab.id as "explain" | "security" | "optimize" | "visualize")}
             className={`flex-1 flex items-center justify-center gap-2 py-2 rounded-lg text-xs font-medium transition-all
               ${activeTab === tab.id 
                 ? "bg-white/[0.05] text-white shadow-sm" 
@@ -92,7 +148,7 @@ const AIPanel = () => {
               </div>
               <h3 className="text-sm font-medium text-red-400 mb-1">Analysis Error</h3>
               <p className="text-xs text-gray-500 max-w-[200px] mb-4">
-                {error.replace("AI Analysis Failed:", "").trim()}
+                {error?.replace("AI Analysis Failed:", "").trim() || "An unknown error occurred"}
               </p>
               <button
                 onClick={() => analyzeCode()}
@@ -144,24 +200,15 @@ const AIPanel = () => {
               ) : (
                 <div className="prose prose-invert prose-xs max-w-none">
                    {/* Simplified markdown rendering for code output */}
-                   {aiInsights && aiInsights[activeTab] ? (
+                    {aiInsights && aiInsights[activeTab as keyof typeof aiInsights] ? (
                       <div className="text-xs text-gray-300 leading-relaxed space-y-3 whitespace-pre-wrap">
-                        {aiInsights[activeTab].split('```').map((block, i) => {
+                        {(aiInsights[activeTab as keyof typeof aiInsights] as string).split('```').map((block: string, i: number) => {
                           if (i % 2 === 1) {
                             const lines = block.split('\n');
                             const lang = lines[0].trim();
                             const content = lines.slice(1).join('\n').trim();
-                            return (
-                              <div key={i} className="rounded-lg overflow-hidden my-2 border border-white/[0.05]">
-                                <ReactSyntaxHighlighter
-                                  language={lang || 'text'}
-                                  style={atomOneDark}
-                                  customStyle={{ margin: 0, padding: '12px', fontSize: '11px', background: '#050505' }}
-                                >
-                                  {content}
-                                </ReactSyntaxHighlighter>
-                              </div>
-                            );
+                            
+                            return <AICodeBlock key={i} content={content} lang={lang} />;
                           }
                           return <span key={i}>{block}</span>;
                         })}
