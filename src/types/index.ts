@@ -36,6 +36,12 @@ export interface ExecutionResult {
   error: string | null;
 }
 
+export interface ChatMessage {
+  role: "user" | "assistant";
+  content: string;
+  timestamp: number;
+}
+
 export interface AIInsights {
   explain: string;
   security: string;
@@ -57,6 +63,8 @@ export interface CodeEditorState {
   executionResult: ExecutionResult | null;
   engine: "wandbox" | "piston";
   aiInsights: AIInsights | null;
+  chatMessages: ChatMessage[];
+  isChatting: boolean;
   showAI: boolean;
   ignoredMarkers: string[];
   editorWidth: number;
@@ -75,6 +83,7 @@ export interface CodeEditorState {
   setAIWidth: (width: number) => void;
   runCode: () => Promise<void>;
   analyzeCode: () => Promise<void>;
+  sendChatMessage: (message: string) => Promise<void>;
   lintCode: () => Promise<any[]>;
   ignoreMarker: (markerHash: string) => void;
 }

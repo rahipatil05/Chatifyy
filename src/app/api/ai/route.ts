@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   const GROQ_API_KEY = process.env.GROQ_API_KEY;
   try {
-    const { code, language, mode } = await req.json();
+    const { code, language, mode, messages, output } = await req.json();
 
     if (!GROQ_API_KEY) {
       return NextResponse.json({ error: "Groq API Key not configured" }, { status: 500 });
@@ -37,6 +37,27 @@ export async function POST(req: Request) {
 
         Code:
         \`\`\`${language}\n${code}\n\`\`\``;
+    } else if (mode === "chat") {
+      const lastMessage = messages?.[messages.length - 1]?.content || "";
+      const history = messages?.slice(0, -1).map((m: any) => `${m.role === 'user' ? 'User' : 'Assistant'}: ${m.content}`).join('\n') || "";
+
+      prompt = `You are a helpful AI coding assistant. You have access to the user's current code and its latest execution output.
+      
+      Current Code (${language}):
+      \`\`\`${language}
+      ${code}
+      \`\`\`
+      
+      Latest Execution Output:
+      ${output || "No output yet."}
+      
+      Conversation History:
+      ${history}
+      
+      User's Question:
+      ${lastMessage}
+      
+      Provide a helpful, technical, and concise response. If the user asks about the code or output, use the provided context.`;
     }
 
     const systemPrompt = (mode === "visualize" || mode === "lint")

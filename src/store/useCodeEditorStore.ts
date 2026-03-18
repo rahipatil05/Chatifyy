@@ -38,6 +38,8 @@ export const useCodeEditorStore = create<CodeEditorState>((set, get) => {
     ignoredMarkers: [],
     editorWidth: typeof window !== "undefined" ? Number(localStorage.getItem("editor-width")) || 45 : 45,
     aiWidth: typeof window !== "undefined" ? Number(localStorage.getItem("ai-width")) || 30 : 30,
+    chatMessages: [],
+    isChatting: false,
     error: null,
     editor: null,
     code: "",
@@ -111,6 +113,7 @@ export const useCodeEditorStore = create<CodeEditorState>((set, get) => {
         output: "",
         error: null,
         aiInsights: null, // Reset AI insights on language change
+        chatMessages: [], // Reset chat on language change
       });
 
       if (get().editor) {
@@ -160,6 +163,53 @@ export const useCodeEditorStore = create<CodeEditorState>((set, get) => {
         set({ error: `AI Analysis Failed: ${error.message}` });
       } finally {
         set({ isAnalyzing: false });
+      }
+    },
+
+    sendChatMessage: async (message: string) => {
+      const { language, code, executionResult, chatMessages } = get();
+      
+      const newUserMessage = {
+        role: "user" as const,
+        content: message,
+        timestamp: Date.now(),
+      };
+
+      const updatedMessages = [...chatMessages, newUserMessage];
+      set({ chatMessages: updatedMessages, isChatting: true, error: null });
+
+      try {
+        const response = await fetch("/api/ai", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            code,
+            language,
+            mode: "chat",
+            messages: updatedMessages,
+            output: executionResult?.output || "",
+          }),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || "Failed to get AI response");
+        }
+
+        const data = await response.json();
+        
+        const assistantMessage = {
+          role: "assistant" as const,
+          content: data.result,
+          timestamp: Date.now(),
+        };
+
+        set({ chatMessages: [...updatedMessages, assistantMessage] });
+      } catch (error: any) {
+        console.error("Chat Error:", error);
+        set({ error: `Chat Error: ${error.message}` });
+      } finally {
+        set({ isChatting: false });
       }
     },
 
